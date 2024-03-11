@@ -42,6 +42,22 @@ class Solution{
         }
         return slow;
     }
+
+
+    Node *joiner(Node *&head, Node *&newhead){
+          Node *p=head;
+          Node *next=head->next;
+          Node*q=newhead;
+          while(p!=NULL){
+             p->next=q;
+             q=q->next;
+             p->next->next=next;
+             p=next;
+             if(next!=NULL) next=next->next;
+             
+          }
+          return head;
+    }
     
     Node * reverser(Node * head ){
         Node *prev=NULL;
